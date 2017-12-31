@@ -26,6 +26,8 @@ After installation is complete open Factorio, browse LAN games, and the server s
 
 ## Log into the VM
 
+In order to change server settings it's required to login to the server. This can be done through VirtualBox or ssh.
+
 ### Login with Virtual Box
 
 If the VM isn't already visible, open VirtualBox and double click Factorio.
@@ -49,20 +51,25 @@ vagrant plugin install vagrant-multi-putty
 vagrant putty
 ```
 
+## Modifying Ubuntu
+
+The server is for all intents and purposes a standard Ubuntu box. Feel free to run any commands you want on it. Just remember that if you delete the VM or `vagrant destroy` you lose everything.
+
+
 ## Modifying Configuration
 
-To change settings login to the virtual machine (VM). 
+To change settings login to the virtual machine (VM).
 
 ```
 cd /opt/factorio/config
-nano server-settings.json
+sudo nano server-settings.json
 ```
 
 To edit the docker-compose.yml:
 
 ```
 cd /vagrant
-nano docker-compose.yml
+sudo nano docker-compose.yml
 ```
 
 ## Restarting Server
@@ -73,7 +80,7 @@ sudo docker-compose stop
 sudo docker-compose start
 ```
 
-## Upgrade server to latest version
+## Upgrade Factorio to latest version
 
 ```
 cd /vagrant
@@ -82,7 +89,7 @@ sudo docker-compose pull
 sudo docker-compose restart
 ```
 
-## Upgrade server to specific version
+## Upgrade Factorio to a specific version
 
 Change the `image` in docker-compose.yml, e.g. `image: dtandersen/factorio:0.16.11`.
 
@@ -98,4 +105,16 @@ sudo docker-compose restart
 ```
 cd /factorio/mods
 wget <link to mod>
+```
+
+## Starting from scratch
+
+If something got messed up sometimes its easiest to start over.
+
+WARNING: This destroys everything including configuration, mods, and saves.
+
+Open a command prompt:
+
+```
+vagrant destroy
 ```
