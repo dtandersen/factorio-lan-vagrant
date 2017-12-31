@@ -1,0 +1,10 @@
+version: '3'
+services:
+  factorio:
+    image: dtandersen/factorio
+    network_mode: host
+    ports:
+     - "34197:34197/udp"
+     - "27015:27015/tcp"
+    volumes:
+     - /opt/factorio:/factorio
