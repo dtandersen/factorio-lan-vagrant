@@ -31,8 +31,8 @@ Vagrant.configure("2") do |config|
 	  nano
 	curl -sSL https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 	chmod 755 /usr/local/bin/docker-compose
-	mkdir -p /opt/factorio
-	chown 845:845 /opt/factorio
+	mkdir -p /vagrant/factorio
+	chown vagrant:vagrant /vagrant/factorio
 	cd /vagrant
 	docker-compose up -d
   SHELL
