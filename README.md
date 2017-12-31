@@ -2,6 +2,8 @@
 
 This guide provides instructions to setup a Factorio server on a VirtualBox virtual machine (VM). Vagrant is used to create an Ubuntu VM with Docker installed. The [dtandersen/docker_factorio_server](https://github.com/dtandersen/docker_factorio_server) container is loaded into Docker.
 
+The intended audience is users with basic familiarity with the command line.
+
 # Usage
 
 ## Before you begin
